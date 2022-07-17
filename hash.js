@@ -8,6 +8,7 @@ const transaction = {
     amount: "1btc"
 };
 
+//criando o hash sha256 e convertendo pra string
 const hash = sha256(JSON.stringify(transaction)).toString();
 
 console.log("hash com a trasação original: ", hash);
