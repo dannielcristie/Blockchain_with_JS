@@ -17,7 +17,9 @@ module.exports = class Blockchain {
         const block = new Block(
             this.nextIndex,
             lastHash,
-            data = JSON.stringify(data)
+            data = JSON.stringify(data),
+            "0"
+
         );
         this.blocks.push(block);
         this.nextIndex++;
