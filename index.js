@@ -7,4 +7,9 @@ blockchain.addBlock({ from: 'a', to: 'f', amount: '0.00025btc' });
 blockchain.addBlock({ from: 'b', to: 'f', amount: '0.00025btc' });
 
 console.log(blockchain);
+console.log(blockchain.isValid());
 
+blockchain.blocks[1].data = JSON.stringify  ({ from: 'a', to: 'b', amount: '2btc' });
+
+console.log(blockchain);
+console.log(blockchain.isValid());

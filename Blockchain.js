@@ -22,4 +22,19 @@ module.exports = class Blockchain {
         this.blocks.push(block);
         this.nextIndex++;
     };
+
+    //validando os blocos
+    isValid() {
+        for (let i = this.blocks.length - 1; i > 0; i--) {
+            const currentBlock = this.blocks[i];
+            const previousBlock = this.blocks[i - 1];
+            //verificando o hash, index e confirmando o hash do bloco que esta validando.
+            if (currentBlock.hash !== currentBlock.generateHash()
+                || currentBlock.previousHash !== previousBlock.hash
+                || currentBlock.index !== previousBlock.index + 1) {
+                return false;
+            };
+        };
+        return true;
+    };
 };
